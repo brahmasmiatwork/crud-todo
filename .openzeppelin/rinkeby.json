@@ -1,0 +1,72 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x0cbb0BfB842c8B8151A305F0f460825d850693f9",
+    "txHash": "0x6e44f71ec273dc7949f293d2176385df251b5a579234cd8d109c4632627986a7"
+  },
+  "proxies": [
+    {
+      "address": "0x4327Cfdd7BC9542C5ce6615d5eabB6D7Aabe5Cba",
+      "txHash": "0x21d024cceaa598f1ce7a2bea81e3e22fd575bdfb74bbe180f809a02870accb66",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "cd0787d03b15e3d79948334e74d9cf5e9cb9ce8ae5799a360bf2c23e807a290c": {
+      "address": "0xd56877aCB4c2Db47E026E30C7EEb435DA6ad2f06",
+      "txHash": "0x98b20b3913e672044ca0304a4c397ad880ddd5ac599be7784ee51fd1ecf5696f",
+      "layout": {
+        "storage": [
+          {
+            "label": "Users",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_array(t_struct(Task)6_storage)dyn_storage)",
+            "contract": "Bloc",
+            "src": "contracts\\Bloc.sol:16"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_struct(Task)6_storage)dyn_storage": {
+            "label": "struct Bloc.Task[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_array(t_struct(Task)6_storage)dyn_storage)": {
+            "label": "mapping(address => struct Bloc.Task[])",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Task)6_storage": {
+            "label": "struct Bloc.Task",
+            "members": [
+              {
+                "label": "task",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "isDone",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          }
+        }
+      }
+    }
+  }
+}

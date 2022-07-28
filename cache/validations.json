@@ -1,0 +1,80 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Bloc": {
+        "src": "contracts\\Bloc.sol:6",
+        "version": {
+          "withMetadata": "5f0b87cceda439d355d4c65ef6e4ea9c8de2d99acceb1f1f40053cfcb37c56a8",
+          "withoutMetadata": "cd0787d03b15e3d79948334e74d9cf5e9cb9ce8ae5799a360bf2c23e807a290c",
+          "linkedWithoutMetadata": "cd0787d03b15e3d79948334e74d9cf5e9cb9ce8ae5799a360bf2c23e807a290c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "addTask(string)",
+          "getTask(uint256)",
+          "updateStatus(uint256,bool)",
+          "deleteTask(uint256)",
+          "getTaskCount()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "Users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_address,t_array(t_struct(Task)6_storage)dyn_storage)",
+              "contract": "Bloc",
+              "src": "contracts\\Bloc.sol:16"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_struct(Task)6_storage)dyn_storage": {
+              "label": "struct Bloc.Task[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_array(t_struct(Task)6_storage)dyn_storage)": {
+              "label": "mapping(address => struct Bloc.Task[])",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Task)6_storage": {
+              "label": "struct Bloc.Task",
+              "members": [
+                {
+                  "label": "task",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isDone",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                }
+              ],
+              "numberOfBytes": "64"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    }
+  ]
+}
