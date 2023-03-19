@@ -5,13 +5,7 @@ $('#add-task-container').on('shown.bs.modal', function () {
 	$('#new-task').trigger('focus');
 });
 
-/**
-* createTaskList() set the contract object and gets the number
-* of tasks of the user and then calls addTaskToList() to add
-* them to HTML one after the other after all task are added to
-* HTML then calls updateTaskCount()
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-*/
+
 async function createTaskList() {
 	
 	// Get account from the Ganache EVM //
@@ -65,14 +59,7 @@ async function createTaskList() {
 
 }
 
-/**
-* addTaskToList() takes the task attributes and adds them to
-* the HTML
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-* @param {number} id
-* @param {string} name
-* @param {boolean} status
-*/
+
 
 console.log("ACCOUNT AND CONTRACT SUCCESSFULLY LOADED");
 
@@ -84,10 +71,7 @@ function addTaskToList(id, name, status) {
 		add children to it
 	*/
 	let list = document.getElementById('list');
-	/* Create a li element and add the class
-		required to make look good and
-		set the id of it
-	*/
+	
 	let item = document.createElement('li');
 	item.classList.add('list-group-item', 'border-0', 'd-flex', 'justify-content-between', 'align-items-center');
 	item.id = 'item-' + id;
@@ -121,13 +105,7 @@ function addTaskToList(id, name, status) {
 	checkbox.onclick = function () { changeTaskStatus(checkbox.id, id); };
 }
 
-/**
-* removeTask() remove the task from blockchain and then from
-* the HTML using JQuery
-* Note: The taskIndex is the li element id {item-taskIndex}
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-* @param {string} taskIndex
-*/
+
 async function removeTask(taskIndex) {
 	console.log("removeTask(): Remove Task " + taskIndex);
 	// Create the selector for the Task //
@@ -146,14 +124,7 @@ async function removeTask(taskIndex) {
 	}
 }
 
-/**
-* changeTaskStatus() change the status of task in blockchain and
-* then in the HTML
-* Note: The id is the checkbox id {item-taskIndex-checkbox}
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-* @param {string} id
-* @param {number} taskIndex
-*/
+
 async function changeTaskStatus(id, taskIndex) {
 	// Get checkbox element //
 	let checkbox = document.getElementById(id);
@@ -174,11 +145,7 @@ async function changeTaskStatus(id, taskIndex) {
 	}
 }
 
-/**
-* updateTaskCount() update the number of task in HTML by counting
-* the number of item in the ul element
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-*/
+
 function updateTasksCount() {
 	// Get the element of ul tag //
 	let list = document.getElementById('list');
@@ -190,12 +157,7 @@ function updateTasksCount() {
 	count.innerText = taskCount + " Task";
 }
 
-/**
-* addTask() add the task to the HTML via adddTasktoList() and then
-* add it to blockchain and update the count via updateTaskCount()
-* @author Gupta Shrinath <https://github.com/gupta-shrinath>
-* @param {string} name
-*/
+
 async function addTask(name) {
 	console.log("TASK NAME", document.getElementById('new-task').value);
 	// Get the form element containing the new task //
